@@ -1,0 +1,10 @@
+.mat-error {
+  position: absolute;
+  font-size: 11px;
+}
+input {
+  height: 100%;
+}
+.amount {
+  margin: 15px 0;
+}

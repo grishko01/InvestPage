@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="content">
+    <h1>Current Loans</h1>
+    <ng-container *ngFor="let item of loans; index as i">
+      <div class="item flex-between flex-end">
+        <div>
+          <h2 class="tranche"><b>{{item.tranche}}</b></h2>
+          <p class="title">{{item.title}}</p>
+        </div>
+        <button (click)="modalForm(item)" [disabled]="item.amount <= 0">invest</button>
+        <p class="invest" *ngIf="item.invest && item.amount > 0">invested</p>
+        <p class="invest" *ngIf="item.invest && item.amount <= 0">All invested</p>
+      </div>
+    </ng-container>
+    <p class="text-center">Total amount available for investments: ${{totalAmount}}</p>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<h2>Invest in Loan {{data.item.tranche}}</h2>
+<p class="mb10">{{data.item.title}}</p>
+<p class="mt10">Amount available: ${{data.item.available}}</p>
+<p class="mb10" *ngIf="termRemaining?.months || termRemaining?.days || termRemaining?.hours || termRemaining?.minutes">Loans end:
+  <span *ngIf="termRemaining?.months">{{termRemaining?.months}} month</span>
+  <span *ngIf="termRemaining?.days">{{termRemaining?.days}} days</span>
+  <span *ngIf="termRemaining?.hours">{{termRemaining?.hours}} hours</span>
+  <span *ngIf="termRemaining?.minutes">{{termRemaining?.minutes}} minutes</span> </p>
+<p class="mb10">Invest amount ($)</p>
+<div class="flex-between">
+  <div class="relative">
+    <input type="number" [(ngModel)]="investSum">
+    <p class="mat-error" *ngIf="errInvest">Max sum invest ${{data.item.available}}</p>
+  </div>
+  <button (click)="investing()">invest</button>
+</div>
